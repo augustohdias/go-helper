@@ -298,14 +298,6 @@ GoHelper/
 4. Push para a branch (`git push origin feature/AmazingFeature`)
 5. Abra um Pull Request
 
-## 📋 Roadmap
-
-- [ ] Templates para Middlewares
-- [ ] Templates para Tests unitários
-- [ ] Suporte a diferentes frameworks (Gin, Echo, Fiber)
-- [ ] Templates para gRPC services
-- [ ] Configuração de banco de dados automática
-
 ## 🐛 Problemas Conhecidos
 
 - Certifique-se de ter um `go.mod` válido na raiz do projeto
