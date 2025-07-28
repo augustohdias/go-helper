@@ -39,8 +39,8 @@ Cria automaticamente:
 ### Via VSCE
 ```bash
 # Clone o repositório
-git clone <seu-repositorio>
-cd GoHelper
+git clone https://github.com/augustohdias/go-helper
+cd go-helper
 
 # Instale as dependências
 npm install
