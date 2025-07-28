@@ -1,0 +1,33 @@
+package entities
+
+import (
+	"time"
+)
+
+// {{capitalizedName}} represents a {{name}} entity in the domain
+type {{capitalizedName}} struct {
+	ID        string    `json:"id"`
+	CreatedAt time.Time `json:"created_at"`
+	UpdatedAt time.Time `json:"updated_at"`
+	// TODO: Add your entity fields here
+}
+
+// New{{capitalizedName}} creates a new {{capitalizedName}} instance
+func New{{capitalizedName}}() *{{capitalizedName}} {
+	now := time.Now()
+	return &{{capitalizedName}}{
+		CreatedAt: now,
+		UpdatedAt: now,
+	}
+}
+
+// Update sets the UpdatedAt field to current time
+func (e *{{capitalizedName}}) Update() {
+	e.UpdatedAt = time.Now()
+}
+
+// Validate performs basic validation on the entity
+func (e *{{capitalizedName}}) Validate() error {
+	// TODO: Implement validation logic
+	return nil
+}

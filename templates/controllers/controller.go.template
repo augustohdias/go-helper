@@ -1,0 +1,94 @@
+package controllers
+
+import (
+	"encoding/json"
+	"net/http"
+	
+	"{{moduleName}}/internal/domain/usecases"
+)
+
+type {{capitalizedName}}Controller struct {
+	{{camelCaseName}}UseCase usecases.{{capitalizedName}}UseCase
+}
+
+func New{{capitalizedName}}Controller({{camelCaseName}}UseCase usecases.{{capitalizedName}}UseCase) *{{capitalizedName}}Controller {
+	return &{{capitalizedName}}Controller{
+		{{camelCaseName}}UseCase: {{camelCaseName}}UseCase,
+	}
+}
+
+func (c *{{capitalizedName}}Controller) Create(w http.ResponseWriter, r *http.Request) {
+	// TODO: Implement create logic
+	w.Header().Set("Content-Type", "application/json")
+	
+	// Example response
+	response := map[string]interface{}{
+		"message": "{{capitalizedName}} created successfully",
+		"status":  "success",
+	}
+	
+	w.WriteHeader(http.StatusCreated)
+	json.NewEncoder(w).Encode(response)
+}
+
+func (c *{{capitalizedName}}Controller) GetByID(w http.ResponseWriter, r *http.Request) {
+	// TODO: Extract ID from URL parameters
+	// TODO: Implement get by ID logic
+	w.Header().Set("Content-Type", "application/json")
+	
+	// Example response
+	response := map[string]interface{}{
+		"message": "{{capitalizedName}} retrieved successfully",
+		"status":  "success",
+		"data":    nil, // TODO: Return actual data
+	}
+	
+	w.WriteHeader(http.StatusOK)
+	json.NewEncoder(w).Encode(response)
+}
+
+func (c *{{capitalizedName}}Controller) GetAll(w http.ResponseWriter, r *http.Request) {
+	// TODO: Implement get all logic
+	w.Header().Set("Content-Type", "application/json")
+	
+	// Example response
+	response := map[string]interface{}{
+		"message": "{{capitalizedName}}s retrieved successfully",
+		"status":  "success",
+		"data":    []interface{}{}, // TODO: Return actual data
+	}
+	
+	w.WriteHeader(http.StatusOK)
+	json.NewEncoder(w).Encode(response)
+}
+
+func (c *{{capitalizedName}}Controller) Update(w http.ResponseWriter, r *http.Request) {
+	// TODO: Extract ID from URL parameters
+	// TODO: Parse request body
+	// TODO: Implement update logic
+	w.Header().Set("Content-Type", "application/json")
+	
+	// Example response
+	response := map[string]interface{}{
+		"message": "{{capitalizedName}} updated successfully",
+		"status":  "success",
+	}
+	
+	w.WriteHeader(http.StatusOK)
+	json.NewEncoder(w).Encode(response)
+}
+
+func (c *{{capitalizedName}}Controller) Delete(w http.ResponseWriter, r *http.Request) {
+	// TODO: Extract ID from URL parameters
+	// TODO: Implement delete logic
+	w.Header().Set("Content-Type", "application/json")
+	
+	// Example response
+	response := map[string]interface{}{
+		"message": "{{capitalizedName}} deleted successfully",
+		"status":  "success",
+	}
+	
+	w.WriteHeader(http.StatusOK)
+	json.NewEncoder(w).Encode(response)
+}

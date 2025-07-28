@@ -1,0 +1,38 @@
+package factories
+
+import (
+	"context"
+	
+	"{{moduleName}}/internal/application/contracts/repositories"
+)
+
+type {{camelCaseName}}Repository struct {
+	// TODO: Add your database dependencies here
+}
+
+// New{{capitalizedName}}Repository creates a new instance of {{capitalizedName}}Repository
+func New{{capitalizedName}}Repository() repositories.{{capitalizedName}}RepositoryContract {
+	return &{{camelCaseName}}Repository{
+	}
+}
+
+// Implement your repository methods here
+func (r *{{camelCaseName}}Repository) Create(ctx context.Context, entity interface{}) error {
+	// TODO: Implement create logic
+	return nil
+}
+
+func (r *{{camelCaseName}}Repository) FindByID(ctx context.Context, id string) (interface{}, error) {
+	// TODO: Implement find by ID logic
+	return nil, nil
+}
+
+func (r *{{camelCaseName}}Repository) Update(ctx context.Context, entity interface{}) error {
+	// TODO: Implement update logic
+	return nil
+}
+
+func (r *{{camelCaseName}}Repository) Delete(ctx context.Context, id string) error {
+	// TODO: Implement delete logic
+	return nil
+}

@@ -1,0 +1,55 @@
+package dto
+
+import (
+	"time"
+)
+
+// {{capitalizedName}}RequestDTO represents the request data for {{name}} operations
+type {{capitalizedName}}RequestDTO struct {
+	// TODO: Add your request fields here
+	// Example:
+	// Name        string `json:"name" validate:"required"`
+	// Email       string `json:"email" validate:"required,email"`
+	// Description string `json:"description,omitempty"`
+}
+
+// {{capitalizedName}}ResponseDTO represents the response data for {{name}} operations
+type {{capitalizedName}}ResponseDTO struct {
+	ID          string    `json:"id"`
+	CreatedAt   time.Time `json:"created_at"`
+	UpdatedAt   time.Time `json:"updated_at"`
+	// TODO: Add your response fields here
+	// Example:
+	// Name        string `json:"name"`
+	// Email       string `json:"email"`
+	// Description string `json:"description,omitempty"`
+}
+
+// ToEntity converts {{capitalizedName}}RequestDTO to domain entity
+func (dto *{{capitalizedName}}RequestDTO) ToEntity() interface{} {
+	// TODO: Implement conversion to domain entity
+	// Example:
+	// return &entities.{{capitalizedName}}{
+	//     Name:        dto.Name,
+	//     Email:       dto.Email,
+	//     Description: dto.Description,
+	// }
+	return nil
+}
+
+// FromEntity creates {{capitalizedName}}ResponseDTO from domain entity
+func (dto *{{capitalizedName}}ResponseDTO) FromEntity(entity interface{}) *{{capitalizedName}}ResponseDTO {
+	// TODO: Implement conversion from domain entity
+	// Example:
+	// if e, ok := entity.(*entities.{{capitalizedName}}); ok {
+	//     return &{{capitalizedName}}ResponseDTO{
+	//         ID:          e.ID,
+	//         CreatedAt:   e.CreatedAt,
+	//         UpdatedAt:   e.UpdatedAt,
+	//         Name:        e.Name,
+	//         Email:       e.Email,
+	//         Description: e.Description,
+	//     }
+	// }
+	return dto
+} 

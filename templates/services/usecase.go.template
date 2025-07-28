@@ -1,0 +1,9 @@
+package usecases
+
+import "context"
+
+// {{capitalizedName}}UseCase defines the contract for {{name}} use case
+type {{capitalizedName}}UseCase interface {
+	Execute(ctx context.Context) error
+	// TODO: Add your use case methods here
+}

@@ -1,0 +1,20 @@
+package factories
+
+import (
+	"sync"
+	
+	"{{moduleName}}/internal/application/services"
+	"{{moduleName}}/internal/domain/usecases"
+)
+
+var (
+	once{{capitalizedName}} sync.Once
+	{{camelCaseName}}Instance usecases.{{capitalizedName}}UseCase
+)
+
+func Get{{capitalizedName}}() usecases.{{capitalizedName}}UseCase {
+	once{{capitalizedName}}.Do(func() {
+		{{camelCaseName}}Instance = services.New{{capitalizedName}}()
+	})
+	return {{camelCaseName}}Instance
+}

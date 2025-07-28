@@ -1,0 +1,19 @@
+package factories
+
+import (
+	"sync"
+	
+	"{{moduleName}}/internal/presentation/controllers"
+)
+
+var (
+	once{{capitalizedName}} sync.Once
+	{{camelCaseName}}Instance *controllers.{{capitalizedName}}Controller
+)
+
+func Get{{capitalizedName}}Controller() *controllers.{{capitalizedName}}Controller {
+	once{{capitalizedName}}.Do(func() {
+		{{camelCaseName}}Instance = controllers.New{{capitalizedName}}Controller()
+	})
+	return {{camelCaseName}}Instance
+} 

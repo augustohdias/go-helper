@@ -1,0 +1,22 @@
+package services
+
+import (
+	"context"
+	
+	"{{moduleName}}/internal/domain/usecases"
+)
+
+type {{camelCaseName}}Service struct {
+	// TODO: Add your dependencies here
+}
+
+// New{{capitalizedName}} creates a new instance of {{capitalizedName}}Service
+func New{{capitalizedName}}() usecases.{{capitalizedName}}UseCase {
+	return &{{camelCaseName}}Service{}
+}
+
+// Implement your service methods here
+func (s *{{camelCaseName}}Service) Execute(ctx context.Context) error {
+	// TODO: Implement service logic
+	return nil
+}

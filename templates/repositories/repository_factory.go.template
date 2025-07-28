@@ -1,0 +1,20 @@
+package repositories
+
+import (
+	"sync"
+	
+	"{{moduleName}}/internal/application/contracts/repositories"
+	repoImpl "{{moduleName}}/internal/infra/databases/repositories"
+)
+
+var (
+	once{{capitalizedName}} sync.Once
+	{{camelCaseName}}Instance repositories.{{capitalizedName}}RepositoryContract
+)
+
+func Get{{capitalizedName}}() repositories.{{capitalizedName}}RepositoryContract {
+	once{{capitalizedName}}.Do(func() {
+		{{camelCaseName}}Instance = repoImpl.New{{capitalizedName}}Repository(db)
+	})
+	return {{camelCaseName}}Instance
+} 

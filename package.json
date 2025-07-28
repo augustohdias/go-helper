@@ -1,0 +1,245 @@
+{
+  "name": "go-helper",
+  "displayName": "Go Helper",
+  "description": "Extensão para criação de componentes de serviço web em Go seguindo Clean Architecture",
+  "version": "0.1.4",
+  "publisher": "go-helper",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/your-username/go-helper.git"
+  },
+  "bugs": {
+    "url": "https://github.com/your-username/go-helper/issues"
+  },
+  "homepage": "https://github.com/your-username/go-helper#readme",
+  "engines": {
+    "vscode": "^1.74.0"
+  },
+  "categories": [
+    "Snippets",
+    "Other"
+  ],
+  "activationEvents": [
+    "onCommand:goHelper.createService",
+    "onCommand:goHelper.createRepository",
+    "onCommand:goHelper.createEntity",
+    "onCommand:goHelper.createController",
+    "onCommand:goHelper.createDTO"
+  ],
+  "main": "./out/extension.js",
+  "contributes": {
+    "commands": [
+      {
+        "command": "goHelper.createService",
+        "title": "Go Helper: Create Service",
+        "category": "Go Helper",
+        "icon": "$(gear)"
+      },
+      {
+        "command": "goHelper.createRepository",
+        "title": "Go Helper: Create Repository", 
+        "category": "Go Helper",
+        "icon": "$(database)"
+      },
+      {
+        "command": "goHelper.createEntity",
+        "title": "Go Helper: Create Entity",
+        "category": "Go Helper",
+        "icon": "$(symbol-class)"
+      },
+      {
+        "command": "goHelper.createController",
+        "title": "Go Helper: Create Controller",
+        "category": "Go Helper",
+        "icon": "$(globe)"
+      },
+      {
+        "command": "goHelper.createDTO",
+        "title": "Go Helper: Create DTO",
+        "category": "Go Helper",
+        "icon": "$(package)"
+      }
+    ],
+    "configuration": {
+      "title": "Go Helper",
+      "properties": {
+        "goHelper.moduleName": {
+          "type": "string",
+          "default": "",
+          "description": "Nome do módulo Go (ex: github.com/user/project). Se vazio, será detectado automaticamente ou solicitado ao usuário."
+        },
+        "goHelper.paths.services": {
+          "type": "string",
+          "default": "internal/application/services",
+          "description": "Caminho onde os services serão criados"
+        },
+        "goHelper.paths.usecases": {
+          "type": "string", 
+          "default": "internal/domain/usecases",
+          "description": "Caminho onde os usecases serão criados"
+        },
+        "goHelper.paths.entities": {
+          "type": "string",
+          "default": "internal/domain/entities", 
+          "description": "Caminho onde as entities serão criadas"
+        },
+        "goHelper.paths.dtos": {
+          "type": "string",
+          "default": "internal/domain/dto",
+          "description": "Caminho onde os DTOs serão criados"
+        },
+        "goHelper.paths.repositories": {
+          "type": "string",
+          "default": "internal/infra/databases/repositories",
+          "description": "Caminho onde os repositories serão criados"
+        },
+        "goHelper.paths.repositoryContracts": {
+          "type": "string",
+          "default": "internal/application/contracts/repositories",
+          "description": "Caminho onde os contratos de repositories serão criados"
+        },
+        "goHelper.paths.controllers": {
+          "type": "string",
+          "default": "internal/presentation/controllers",
+          "description": "Caminho onde os controllers serão criados"
+        },
+        "goHelper.paths.serviceFactories": {
+          "type": "string",
+          "default": "internal/main/factories/services",
+          "description": "Caminho onde os factories de services serão criados"
+        },
+        "goHelper.paths.repositoryFactories": {
+          "type": "string",
+          "default": "internal/main/factories/repositories",
+          "description": "Caminho onde os factories de repositories serão criados"
+        },
+        "goHelper.paths.controllerFactories": {
+          "type": "string",
+          "default": "internal/main/factories/controllers",
+          "description": "Caminho onde os factories de controllers serão criados"
+        }
+      }
+    },
+    "menus": {
+      "explorer/context": [
+        {
+          "command": "goHelper.createService",
+          "group": "goHelper@1",
+          "when": "explorerResourceIsFolder || resourceExtname == '.go'"
+        },
+        {
+          "command": "goHelper.createRepository",
+          "group": "goHelper@2", 
+          "when": "explorerResourceIsFolder || resourceExtname == '.go'"
+        },
+        {
+          "command": "goHelper.createEntity",
+          "group": "goHelper@3",
+          "when": "explorerResourceIsFolder || resourceExtname == '.go'"
+        },
+        {
+          "command": "goHelper.createController",
+          "group": "goHelper@4",
+          "when": "explorerResourceIsFolder || resourceExtname == '.go'"
+        },
+        {
+          "command": "goHelper.createDTO",
+          "group": "goHelper@5",
+          "when": "explorerResourceIsFolder || resourceExtname == '.go'"
+        }
+      ],
+      "editor/context": [
+        {
+          "command": "goHelper.createService",
+          "group": "goHelper@1",
+          "when": "resourceExtname == '.go'"
+        },
+        {
+          "command": "goHelper.createRepository",
+          "group": "goHelper@2",
+          "when": "resourceExtname == '.go'"
+        },
+        {
+          "command": "goHelper.createEntity",
+          "group": "goHelper@3",
+          "when": "resourceExtname == '.go'"
+        },
+        {
+          "command": "goHelper.createController",
+          "group": "goHelper@4",
+          "when": "resourceExtname == '.go'"
+        },
+        {
+          "command": "goHelper.createDTO",
+          "group": "goHelper@5",
+          "when": "resourceExtname == '.go'"
+        }
+      ],
+      "commandPalette": [
+        {
+          "command": "goHelper.createService"
+        },
+        {
+          "command": "goHelper.createRepository"
+        },
+        {
+          "command": "goHelper.createEntity"
+        },
+        {
+          "command": "goHelper.createController"
+        },
+        {
+          "command": "goHelper.createDTO"
+        }
+      ]
+    },
+    "keybindings": [
+      {
+        "command": "goHelper.createService",
+        "key": "ctrl+alt+s",
+        "mac": "cmd+alt+s",
+        "when": "resourceExtname == '.go' || explorerResourceIsFolder"
+      },
+      {
+        "command": "goHelper.createRepository",
+        "key": "ctrl+alt+r",
+        "mac": "cmd+alt+r", 
+        "when": "resourceExtname == '.go' || explorerResourceIsFolder"
+      },
+      {
+        "command": "goHelper.createEntity",
+        "key": "ctrl+alt+e",
+        "mac": "cmd+alt+e",
+        "when": "resourceExtname == '.go' || explorerResourceIsFolder"
+      },
+      {
+        "command": "goHelper.createController",
+        "key": "ctrl+alt+c",
+        "mac": "cmd+alt+c",
+        "when": "resourceExtname == '.go' || explorerResourceIsFolder"
+      },
+      {
+        "command": "goHelper.createDTO",
+        "key": "ctrl+alt+d",
+        "mac": "cmd+alt+d",
+        "when": "resourceExtname == '.go' || explorerResourceIsFolder"
+      }
+    ]
+  },
+  "scripts": {
+    "vscode:prepublish": "npm run compile",
+    "compile": "tsc -p ./",
+    "watch": "tsc -watch -p ./",
+    "pretest": "npm run compile && npm run lint",
+    "lint": "eslint src --ext ts",
+    "test": "node ./out/test/runTest.js"
+  },
+  "devDependencies": {
+    "@types/vscode": "^1.74.0",
+    "@types/node": "16.x",
+    "@typescript-eslint/eslint-plugin": "^5.45.0",
+    "@typescript-eslint/parser": "^5.45.0",
+    "eslint": "^8.28.0",
+    "typescript": "^4.9.4"
+  }
+} 
