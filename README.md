@@ -36,13 +36,7 @@ Cria automaticamente:
 
 ## 📋 Instalação
 
-### Via Marketplace (Recomendado)
-1. Abra o VS Code
-2. Vá para a aba Extensions (`Ctrl+Shift+X`)
-3. Busque por "Go Helper"
-4. Clique em "Install"
-
-### Via VSCE (Desenvolvimento)
+### Via VSCE
 ```bash
 # Clone o repositório
 git clone <seu-repositorio>
@@ -59,15 +53,10 @@ npm install -g vsce
 
 # Gere o pacote .vsix
 vsce package
-
-# Instale a extensão
-code --install-extension go-helper-0.1.4.vsix
 ```
+- No VS Code: `Ctrl+Shift+P` → "Extensions: Install from VSIX"
 
-### Via Arquivo .vsix
-1. Baixe o arquivo `go-helper-0.1.4.vsix`
-2. No VS Code: `Ctrl+Shift+P` → "Extensions: Install from VSIX"
-3. Selecione o arquivo baixado
+- Selecione o arquivo gerado
 
 ## 🎮 Como Usar
 
